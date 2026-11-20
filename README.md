@@ -28,6 +28,8 @@ Rooms support up to eight guest players. Multiplayer is free-roam surge combat; 
 
 Wall taps add surge stacks. Ramming a rival spends your stacks on knockback. More stacks produce stronger hits. Boost and speed have no hard cap.
 
+Boats have 100 HP. Ordinary rams and surge hits deal damage. A knockout respawns the boat after 2.5 seconds with full health and a two-second shield. The bright YOU marker identifies your boat; colored rings show the enlarged collision footprint. Health is shared in multiplayer.
+
 ## Run locally
 
 Requires Node.js 20 or newer. No package installation or build is required.

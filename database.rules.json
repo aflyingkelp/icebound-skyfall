@@ -61,7 +61,7 @@
               ".validate": false
             },
             "pose": {
-              ".validate": "newData.hasChildren(['x','y','z','vx','vz','heading','surge','hits','lap','next','route']) && newData.child('x').isNumber() && newData.child('y').isNumber() && newData.child('z').isNumber() && newData.child('vx').isNumber() && newData.child('vz').isNumber() && newData.child('heading').isNumber() && newData.child('surge').isNumber() && newData.child('surge').val() >= 0 && newData.child('hits').isNumber() && newData.child('lap').isNumber() && newData.child('next').isNumber() && newData.child('route').isNumber()"
+              ".validate": "newData.hasChildren(['x','y','z','vx','vz','heading','surge','hits','lap','next','route']) && newData.child('x').isNumber() && newData.child('y').isNumber() && newData.child('z').isNumber() && newData.child('vx').isNumber() && newData.child('vz').isNumber() && newData.child('heading').isNumber() && newData.child('surge').isNumber() && newData.child('surge').val() >= 0 && newData.child('hits').isNumber() && newData.child('lap').isNumber() && newData.child('next').isNumber() && newData.child('route').isNumber() && (!newData.child('hp').exists() || (newData.child('hp').isNumber() && newData.child('hp').val() >= 0 && newData.child('hp').val() <= 100)) && (!newData.child('dead').exists() || newData.child('dead').isNumber()) && (!newData.child('invuln').exists() || newData.child('invuln').isNumber())"
             },
             "slot": {
               ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 7"
@@ -85,7 +85,7 @@
             ".read": "auth != null && auth.uid === $target",
             "$event": {
               ".write": "auth != null && ((!data.exists() && newData.child('from').val() === auth.uid && auth.uid !== $target && root.child('rooms').child($code).child('members').child(auth.uid).exists() && root.child('rooms').child($code).child('members').child($target).exists()) || (!newData.exists() && auth.uid === $target))",
-              ".validate": "newData.hasChildren(['from','created','x','z','stack']) && newData.child('created').isNumber() && newData.child('created').val() > now - 10000 && newData.child('created').val() < now + 10000 && newData.child('x').isNumber() && newData.child('z').isNumber() && newData.child('stack').isNumber() && newData.child('stack').val() > 0"
+              ".validate": "newData.hasChildren(['from','created','x','z','stack']) && newData.child('created').isNumber() && newData.child('created').val() > now - 10000 && newData.child('created').val() < now + 10000 && newData.child('x').isNumber() && newData.child('z').isNumber() && newData.child('stack').isNumber() && newData.child('stack').val() >= 0 && (!newData.child('damage').exists() || (newData.child('damage').isNumber() && newData.child('damage').val() >= 0 && newData.child('damage').val() <= 100))"
             }
           }
         },
