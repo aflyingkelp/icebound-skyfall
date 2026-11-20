@@ -1,0 +1,9 @@
+{
+  "name": "icebound-skyfall",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Blue-ice boat racing and Firebase multiplayer surge combat",
+  "scripts": {"start": "node serve.mjs", "test": "node test-runtime.mjs"},
+  "engines": {"node": ">=20"}
+}
